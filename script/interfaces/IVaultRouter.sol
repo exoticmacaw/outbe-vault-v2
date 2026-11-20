@@ -19,10 +19,10 @@ interface IVaultRouter {
     function assetVaultAt(address asset, uint256 index) external view returns (address vault);
 
     /// @notice Applies a governance-approved vault action. Anyone may call this method.
-    function applyApproved(uint256 proposalId) external;
+    function applyVaultAction(uint256 proposalId) external;
 
     /// @notice Returns a governance-approved vault action waiting to be applied.
-    function approvedVaultAction(uint256 proposalId)
+    function getVaultAction(uint256 proposalId)
         external
         view
         returns (VaultAction action, address vault, uint64 approvedAt);
